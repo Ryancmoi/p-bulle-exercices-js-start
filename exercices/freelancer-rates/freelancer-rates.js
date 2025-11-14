@@ -26,7 +26,7 @@
  * @returns {number} the rate per day
  */
 export function dayRate(ratePerHour) {
-  throw new Error('Remove this line and implement the function');
+  return (ratePerHour * 8)
 }
 
 /**
@@ -37,7 +37,7 @@ export function dayRate(ratePerHour) {
  * @returns {number} the number of days
  */
 export function daysInBudget(budget, ratePerHour) {
-  throw new Error('Remove this line and implement the function');
+  return (Math.floor(budget/(ratePerHour*8)))
 }
 
 /**
@@ -49,5 +49,8 @@ export function daysInBudget(budget, ratePerHour) {
  * @returns {number} the rounded up discounted rate
  */
 export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
-  throw new Error('Remove this line and implement the function');
+  //return ((ratePerHour * 8 * numDays - (ratePerHour * 8 * numDays) * discount))
+  let months = numDays % 22
+  return Math.ceil((ratePerHour * 8 * (numDays % 22) + (ratePerHour * 8 * (numDays - months)) - (ratePerHour * 8 * (numDays - months)) * discount))
+  //      taux facturable jour individuel                                   taux mensuel discounté
 }

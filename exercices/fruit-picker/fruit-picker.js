@@ -9,21 +9,19 @@
 //
 // In your own projects, files, and code, you can play with @ts-check as well.
 
-import { notify } from './notifier';
-import { order } from './grocer';
+import { notify } from "./notifier";
+import { order } from "./grocer";
 
 /**
  * @return void
  */
-export function onSuccess() {
-  // implement the onSuccess callback to call notify with a success message
-}
-
+export function onSuccess() {}
+notify({ message: "SUCCESS" });
 /**
  * @return void
  */
 export function onError() {
-  // implement the onError callback to call notify with an error message
+  notify({ message: "ERROR" });
 }
 
 /**
@@ -33,7 +31,7 @@ export function onError() {
  * @return void
  */
 export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
-  // implement the orderFromGrocer function to order the query
+  order({ query, onSuccessCallback, onErrorCallback });
 }
 
 /**

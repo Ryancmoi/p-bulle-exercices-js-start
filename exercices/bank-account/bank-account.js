@@ -4,33 +4,43 @@
 //
 
 export class BankAccount {
-  constructor() {
-    throw new Error('Remove this line and implement the function');
+  constructor(isOpen) {
+    this.isOpen = false;
   }
 
   open() {
-    throw new Error('Remove this line and implement the function');
+    BankAccount.isOpen = true;
   }
 
   close() {
-    throw new Error('Remove this line and implement the function');
+    BankAccount.isOpen = false;
   }
 
-  deposit() {
-    throw new Error('Remove this line and implement the function');
+  deposit(amount) {
+    if (!BankAccount.isOpen) {
+      throw Error("Le compte n'existe pas");
+    } else {
+      BankAccount.balance += amount;
+    }
   }
 
-  withdraw() {
-    throw new Error('Remove this line and implement the function');
+  withdraw(amount) {
+    if (!BankAccount.isOpen) {
+      throw Error("Le compte n'existe pas");
+    } else if (BankAccount.balance - amount < 0) {
+      throw ValueError;
+    } else {
+      BankAccount.balance - amount;
+    }
   }
 
   get balance() {
-    throw new Error('Remove this line and implement the function');
+    return this.balance;
   }
 }
 
 export class ValueError extends Error {
   constructor() {
-    super('Bank account error');
+    super("Bank account error");
   }
 }

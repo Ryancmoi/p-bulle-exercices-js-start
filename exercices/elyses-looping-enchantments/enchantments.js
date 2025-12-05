@@ -11,7 +11,7 @@
 export function cardTypeCheck(stack, card) {
   // 🚨 Use .forEach
   let sameCard = 0;
-  stack.forEach((onecard, index) => {
+  stack.forEach((onecard) => {
     if (onecard == card) {
       sameCard++;
     }

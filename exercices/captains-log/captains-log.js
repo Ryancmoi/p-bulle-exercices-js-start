@@ -6,7 +6,7 @@
  * @returns {string} the generated registry number.
  */
 export function randomShipRegistryNumber() {
-  return "NCC-" + Math.floor(Math.random() * 10001);
+  return "NCC-" + Math.trunc(Math.random() * 10000) + 1000;
 }
 
 /**
@@ -15,7 +15,7 @@ export function randomShipRegistryNumber() {
  * @returns {number} a stardate between 41000 (inclusive) and 42000 (exclusive).
  */
 export function randomStardate() {
-  return Math.floor(Math.random() * (42000.0 - 41000.0)) + 41000.0;
+  return Math.trunc(Math.random() * (42000.0 - 41000.0)) + 41000.0;
 }
 
 /**
@@ -25,5 +25,6 @@ export function randomStardate() {
  */
 export function randomPlanetClass() {
   let classes = ["D", "H", "J", "K", "L", "M", "N", "R", "T", "Y"];
-  return;
+  let randomIndex = Math.trunc(Math.random() * 10);
+  return String(classes[randomIndex]);
 }

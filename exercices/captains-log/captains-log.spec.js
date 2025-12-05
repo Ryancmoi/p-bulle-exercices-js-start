@@ -7,8 +7,8 @@ import {
 
 describe("randomShipRegistryNumber", () => {
   test("registry numbers are valid", () => {
-    for (let i = 0; i < 4; i++) {
-      expect(randomShipRegistryNumber()).toMatch(/NCC-[1-9][0-9]{3}/);
+    for (let i = 0; i < 4000; i++) {
+      expect(randomShipRegistryNumber()).toMatch(/NCC-[1-9][0-9]{3}$/);
     }
   });
 

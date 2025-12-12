@@ -39,6 +39,9 @@ export function limesToCut(wedgesNeeded, limes) {
   let actualWedges = 0;
   let iteration = 0;
   while (actualWedges < wedgesNeeded) {
+    if (limes.length == 0) {
+      return 0;
+    }
     if (limes[iteration] == "small") {
       actualWedges += 6;
       iteration++;
@@ -70,5 +73,9 @@ export function limesToCut(wedgesNeeded, limes) {
  * @returns {string[]} remaining orders after the time is up
  */
 export function remainingOrders(timeLeft, orders) {
-  throw new Error("Remove this line and implement the function");
+  while (timeLeft > 0) {
+    timeLeft -= timeToMixJuice(orders[0]);
+    orders.shift();
+  }
+  return orders;
 }

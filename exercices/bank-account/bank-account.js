@@ -4,38 +4,61 @@
 //
 
 export class BankAccount {
-  constructor(isOpen) {
-    this.isOpen = false;
+  isClosed;
+  Balance;
+
+  constructor() {
+    this.Balance = 0;
+    this.isClosed = true;
   }
 
   open() {
-    BankAccount.isOpen = true;
+    if (!this.isClosed) {
+      throw new ValueError();
+    } else {
+      this.isClosed = false;
+      this.Balance = 0;
+    }
   }
 
   close() {
-    BankAccount.isOpen = false;
+    if (this.isClosed) {
+      throw new ValueError();
+    } else {
+      this.isClosed = true;
+    }
   }
 
   deposit(amount) {
-    if (!BankAccount.isOpen) {
-      throw Error("Le compte n'existe pas");
+    if (this.isClosed) {
+      throw new ValueError();
     } else {
-      BankAccount.balance += amount;
+      if (amount < 0) {
+        throw new ValueError();
+      } else {
+        this.Balance += amount;
+      }
     }
   }
 
   withdraw(amount) {
-    if (!BankAccount.isOpen) {
-      throw Error("Le compte n'existe pas");
-    } else if (BankAccount.balance - amount < 0) {
-      throw ValueError;
+    if (this.isClosed) {
+      throw new ValueError();
     } else {
-      BankAccount.balance - amount;
+      if (amount < 0 || this.balance < amount) {
+        throw new ValueError();
+      } else {
+        this.Balance -= amount;
+      }
     }
   }
 
   get balance() {
-    return this.balance;
+    if (this.isClosed) {
+      throw new ValueError();
+    } else {
+      return this.Balance;
+    }
   }
 }
 

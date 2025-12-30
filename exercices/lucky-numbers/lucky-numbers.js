@@ -11,10 +11,10 @@ export function twoSum(array1, array2) {
   let array1Numbers = "";
   let array2Numbers = "";
   for (let i = 0; i < array1.length; i++) {
-    array1Numbers += String(array1[i]);
+    array1Numbers += array1[i];
   }
   for (let i = 0; i < array2.length; i++) {
-    array2Numbers += String(array2[i]);
+    array2Numbers += array2[i];
   }
   return Number(array1Numbers) + Number(array2Numbers);
 }

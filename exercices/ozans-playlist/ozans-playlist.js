@@ -11,7 +11,9 @@
  * @returns {string[]} new playlist with unique entries
  */
 export function removeDuplicates(playlist) {
-  throw new Error('Remove this line and implement the function');
+  let newPlaylist = new Set(playlist);
+  let playlistArray = Array.from(newPlaylist);
+  return playlistArray;
 }
 
 /**
@@ -22,7 +24,8 @@ export function removeDuplicates(playlist) {
  * @returns {boolean} whether the track is in the playlist
  */
 export function hasTrack(playlist, track) {
-  throw new Error('Remove this line and implement the function');
+  let newPlaylist = new Set(playlist);
+  return newPlaylist.has(track);
 }
 
 /**
@@ -33,7 +36,10 @@ export function hasTrack(playlist, track) {
  * @returns {string[]} new playlist
  */
 export function addTrack(playlist, track) {
-  throw new Error('Remove this line and implement the function');
+  let newPlaylist = new Set(playlist);
+  newPlaylist.add(track);
+  let addedTrackPlaylist = Array.from(newPlaylist);
+  return addedTrackPlaylist;
 }
 
 /**
@@ -44,7 +50,10 @@ export function addTrack(playlist, track) {
  * @returns {string[]} new playlist
  */
 export function deleteTrack(playlist, track) {
-  throw new Error('Remove this line and implement the function');
+  let newPlaylist = new Set(playlist);
+  newPlaylist.delete(track);
+  let removedTrackPlaylist = Array.from(newPlaylist);
+  return removedTrackPlaylist;
 }
 
 /**
@@ -54,5 +63,12 @@ export function deleteTrack(playlist, track) {
  * @returns {string[]} list of artists
  */
 export function listArtists(playlist) {
-  throw new Error('Remove this line and implement the function');
+  let newPlaylist = new Set(playlist);
+  let playlistArray = Array.from(newPlaylist);
+  let artistsPlaylist = [];
+  for (let i = 0; i < playlistArray.length; i++) {
+    let s = playlistArray[i].split("-");
+    artistsPlaylist[i] = s[1].trim();
+  }
+  return Array.from(new Set(artistsPlaylist));
 }

@@ -19,3 +19,7 @@
   - Vous me donnez l'impression de penser que je vous "ai dans le collimateur" et que j'ai quelque chose de personnel contre vous. Si c'est effectivement ce que vous pensez, sachez que ce n'est pas le cas. Mais il est vrai que vous attirez souvent mon attention par vos discussion avec vos voisins. Elles me dérangent surtout quand elles interviennent pendant que je m'adresse à toute la classe.
   - Je pense que les niveaux chiffrés ci-dessus sont en dessous de vos capacités. Je trouve cela dommage parce que je crois que vous êtes capable d'atteindre un niveau supérieur au minimum qui vous est demandé ici. 
   - J'ai fait le même genre de remarque à Thomas avec qui vous me sembler vous distraire. J'espère que 2026 sera l'année où vous réaliserez qu'il est dans votre intérêt d'adopter une attitude plus active.
+
+## Final
+
+- Voir grille
